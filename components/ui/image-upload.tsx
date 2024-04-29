@@ -54,24 +54,31 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         ))}
       </div>
       <CldUploadWidget onUpload={onUpload} uploadPreset="lzgqxk4k">
-        {({ open }) => {
-          const onClick = () => {
-            open();
-          };
+  {(props) => {
+    console.log(props);  // Log all properties to see what is actually being passed
+    const { open } = props;
+    const onClick = () => {
+      if (open) {
+        open();
+      } else {
+        console.error('Open function is not available');
+      }
+    };
 
-          return (
-            <Button 
-              type="button" 
-              disabled={disabled} 
-              variant="secondary" 
-              onClick={onClick}
-            >
-              <ImagePlus className="h-4 w-4 mr-2" />
-              Upload an Image
-            </Button>
-          );
-        }}
-      </CldUploadWidget>
+    return (
+      <Button 
+        type="button" 
+        disabled={disabled} 
+        variant="secondary" 
+        onClick={onClick}
+      >
+        <ImagePlus className="h-4 w-4 mr-2" />
+        Upload an Image
+      </Button>
+    );
+  }}
+</CldUploadWidget>
+
     </div>
   );
 }
