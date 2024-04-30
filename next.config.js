@@ -1,7 +1,7 @@
 // next.config.js
 module.exports = {
   images: {
-    domains: ['res.cloudinary.com'], // This line allows images from Cloudinary
+    domains: ['res.cloudinary.com'], 
   },
   // ... any other configuration options
 };
