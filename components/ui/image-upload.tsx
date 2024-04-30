@@ -53,7 +53,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </div>
         ))}
       </div>
-      <CldUploadWidget onUpload={onUpload} uploadPreset="lzgqxk4k">
+      <CldUploadWidget onUpload={onUpload} uploadPreset="cy11ie8z">
   {(props) => {
     console.log(props);  // Log all properties to see what is actually being passed
     const { open } = props;
